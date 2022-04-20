@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {ReactComponent as CrwnLogo } from '../../assets/crown.svg'
+import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
 import './navigation.styles.css'
-
+import CartWidget from './cart-widget.component';
 
 const Navigation = () => {
     return (
@@ -14,7 +14,7 @@ const Navigation = () => {
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                    <a className="nav-link" href="#">Home</a>
+                    <a className="nav-link" href="#">Inicio</a>
                     </li>
                     <li className="nav-item">
                     <a className="nav-link" href="#">Nosotros</a>
@@ -23,8 +23,9 @@ const Navigation = () => {
                     <a className="nav-link" href="#">Tienda</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Contacto</a>
+                    <a className="nav-link" href="#"><CartWidget /></a>
                     </li>
+                    
                 </ul>
             </div>
         </nav>
