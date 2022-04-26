@@ -1,7 +1,7 @@
 import React from 'react';
 import './categories.styles.css'
 
-const Home = () => {
+const Categorias = () => {
     const categories = [
       {
         "id": 1,
@@ -46,4 +46,4 @@ const Home = () => {
     );
   }
   
-  export default Home;
+  export default Categorias;
