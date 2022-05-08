@@ -1,37 +1,22 @@
 import React from 'react';
 import './categories.styles.css'
+import { useState, useEffect } from 'react';
+
 
 const Categorias = () => {
-    const categories = [
-      {
-        "id": 1,
-        "title": "Gorras",
-        "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-      },
-      {
-        "id": 2,
-        "title": "Jackets",
-        "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-      },
-      {
-        "id": 3,
-        "title": "Sneakers",
-        "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-      },
-      {
-        "id": 4,
-        "title": "Mujeres",
-        "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-      },
-      {
-        "id": 5,
-        "title": "Hombres",
-        "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-      }
-    ]
+
+  const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      // promesapara obtener las categorias del desafio//
+      fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e')
+      .then((response) => response.json())
+      .then((users) => setCategories(users));
+    }, []);
   
     return (
         <div className="categories-container">
+        {/* Map para renderizar las categorias del desafio */}
             {categories.map(({title, imageUrl, id}) => (      
                 <div className="category-container" key={id}>
                     <div className='background-image' style={{backgroundImage: `url(${imageUrl})`,}} />
@@ -42,6 +27,7 @@ const Categorias = () => {
                  </div>
 
             ))}
+            {console.log('rendered')}
         </div>
     );
   }
