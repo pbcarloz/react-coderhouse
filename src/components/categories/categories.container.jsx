@@ -8,7 +8,7 @@ const Categorias = () => {
   const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-      // promesapara obtener las categorias del desafio//
+      // promesapara obtener las categorias del desafio *********************************************//
       fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e')
       .then((response) => response.json())
       .then((users) => setCategories(users));
@@ -16,7 +16,7 @@ const Categorias = () => {
   
     return (
         <div className="categories-container">
-        {/* Map para renderizar las categorias del desafio */}
+        {/* Map para renderizar las categorias del desafio *******************************************************/}
             {categories.map(({title, imageUrl, id}) => (      
                 <div className="category-container" key={id}>
                     <div className='background-image' style={{backgroundImage: `url(${imageUrl})`,}} />
