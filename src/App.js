@@ -1,14 +1,26 @@
 import Navigation from "./components/navigation/navigation.component";
-import Categorias from "./components/categories/categories.container";
-import ItemCounter from "./components/itemCount/item-count.component";
+import Categorias from "./components/categories/itemList-container.jsx";
+
+import { Route, Routes } from "react-router-dom";
+import ItemDetailGorras from "./components/itemDetailContainer/itemDetailContainer.Gorras";
+import ItemDetailAbrigos from "./components/itemDetailContainer/itemDetailContainer.Abrigos";
+import ItemDetailTenis from "./components/itemDetailContainer/itemDetailContainer.tenis";
+import ItemDetailMujeres from "./components/itemDetailContainer/itemDetailContainer.Mujeres";
+import ItemDetailHombres from "./components/itemDetailContainer/itemDetailContainer.Hombres";
 
 const App = () => {
   return (
-    <div>
-      <Navigation />
-      <Categorias />
-      <ItemCounter stock = {5} initial = {1} />
-    </div>
+    
+    <Routes>
+      <Route path ='/' element={ <Navigation /> }>
+        <Route index element={<Categorias />} />
+        <Route path ='gorras' element={<ItemDetailGorras />} />
+        <Route path='abrigos' element={<ItemDetailAbrigos />} />
+        <Route path ='tenis' element={<ItemDetailTenis />} />
+        <Route path ='mujeres' element={<ItemDetailMujeres />} />
+        <Route path ='hombres' element={<ItemDetailHombres />} />
+      </Route>
+    </Routes>
     
   )
 }

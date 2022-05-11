@@ -60,7 +60,9 @@
     font-size: 22px;
     color: #4a4a4a;
 }
-.category-container .category-body-container p {
+.category-container .category-body-container .link-styling {
     font-weight: lighter;
     font-size: 16px;
+    text-decoration: none;
+    color: #4a4a4a;
 }

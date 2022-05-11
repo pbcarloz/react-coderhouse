@@ -1,6 +1,7 @@
 import React from 'react';
-import './categories.styles.css'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './itemList-styles.css'
 
 
 const Categorias = () => {
@@ -9,7 +10,7 @@ const Categorias = () => {
 
     useEffect(() => {
       // promesapara obtener las categorias del desafio *********************************************//
-      fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e')
+      fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e/1')
       .then((response) => response.json())
       .then((users) => setCategories(users));
     }, []);
@@ -22,12 +23,13 @@ const Categorias = () => {
                     <div className='background-image' style={{backgroundImage: `url(${imageUrl})`,}} />
                     <div className="category-body-container">
                         <h2>{title}</h2>
-                        <p>Comprar</p>
+                        <Link to={title} className='link-styling'>
+                          Comprar
+                        </Link>
                     </div>
+                    {console.log(title)}
                  </div>
-
             ))}
-            {console.log('rendered')}
         </div>
     );
   }

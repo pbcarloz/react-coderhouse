@@ -22,10 +22,10 @@ const ItemCounter = ({stock, initial}) => {
 
     return (
         <div className="counter-card-container">
-            <h3>Add Items</h3>
+            <p>Agregar al Carrito</p>
             <div className="counter">
                 <button onClick={subtractItem}>-</button>
-                <h3>{counter}</h3>
+                <p>{counter}</p>
                 <button onClick={addItem}>+</button>
             </div>
         </div>
@@ -34,3 +34,5 @@ const ItemCounter = ({stock, initial}) => {
 };
 
 export default ItemCounter;
+
+ 
