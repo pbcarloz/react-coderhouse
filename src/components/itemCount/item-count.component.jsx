@@ -1,9 +1,11 @@
-import react, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import './item-count.styles.css'
 
 const ItemCounter = ({stock, initial}) => {
 
     const [counter, setCounter] = useState(initial);
+
 
     const addItem = () => {
         if (counter < stock) {
@@ -19,18 +21,29 @@ const ItemCounter = ({stock, initial}) => {
          }
     };
 
+    // Funcion OnAdd para almacenar la cantidad
+    const onAdd = () => {
+        console.log(`Se agregaron ${counter} piezas al carrito`);
+        // desaparece el itemCount
+        setCounter(initial);
+    }
+
+
 
     return (
         <div className="counter-card-container">
-            <p>Agregar al Carrito</p>
+        <span onClick={onAdd} className='link-carrito'>Agregar al Carrito de Compra</span>
             <div className="counter">
                 <button onClick={subtractItem}>-</button>
-                <p>{counter}</p>
+                <span>{counter}</span>
                 <button onClick={addItem}>+</button>
             </div>
+            {/* Boton terminar la compra */}
+            <Link to='/carrito' className='link-carrito'>
+                <span onClick={onAdd} className='link-carrito'>Finalizar Compra</span>
+            </Link>
         </div>
     )
-
 };
 
 export default ItemCounter;

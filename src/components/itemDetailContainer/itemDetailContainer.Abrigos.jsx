@@ -1,3 +1,4 @@
+
 import ItemCounter from '../itemCount/item-count.component'
 import './itemDetailContainer-styles.css'
 
@@ -34,7 +35,11 @@ import './itemDetailContainer-styles.css'
       },
     ]
 
+   
+
     const ItemDetailAbrigos = () => {
+
+   
 
     return(
         <div className='products-container'>
@@ -45,7 +50,7 @@ import './itemDetailContainer-styles.css'
                         <span className='name'>{name}</span>
                         <span className='price'>Precio $ {price}</span>
                     </div>
-                        <ItemCounter stock = {5} initial = {1} className="contador"/>
+                        <ItemCounter stock = {5} initial = {1} className="contador" />
                 </div>
             ))}
             

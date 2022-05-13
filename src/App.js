@@ -7,6 +7,7 @@ import ItemDetailAbrigos from "./components/itemDetailContainer/itemDetailContai
 import ItemDetailTenis from "./components/itemDetailContainer/itemDetailContainer.tenis";
 import ItemDetailMujeres from "./components/itemDetailContainer/itemDetailContainer.Mujeres";
 import ItemDetailHombres from "./components/itemDetailContainer/itemDetailContainer.Hombres";
+import Carrito from "./components/carrito/carrito";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path ='tenis' element={<ItemDetailTenis />} />
         <Route path ='mujeres' element={<ItemDetailMujeres />} />
         <Route path ='hombres' element={<ItemDetailHombres />} />
+        <Route path ='carrito' element={<Carrito />} />
       </Route>
     </Routes>
     
