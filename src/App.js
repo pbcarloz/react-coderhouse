@@ -13,8 +13,9 @@ const App = () => {
     <Routes>
       <Route path ='/' element={ <Navigation /> }>
         <Route index element={<Categorias />} />
+        {/* rutias y params para */}
         <Route path ='/tienda/:titulo' element={<ItemDetailCategory />} />
-        <Route path ='title' element={<Carrito />} />
+        <Route path ='/carrito' element={<Carrito />} />
 
       </Route>
     </Routes>
