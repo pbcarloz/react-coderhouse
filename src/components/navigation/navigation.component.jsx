@@ -1,11 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
-import './navigation.styles.css'
-import CartWidget from './cart-widget.component';
-import { Fragment } from 'react';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { CartContext } from '../../context/cart.context';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from "react-router-dom"
+import './navigation.styles.css'
+
+
 
 const Navigation = () => {
+    const { isCartOpen } = useContext(CartContext);
+    
     return (
         <Fragment>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,13 +22,12 @@ const Navigation = () => {
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Tienda</a>
-                    </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="#"><CartWidget /></a>
-                    </li>                  
+                        <a className="nav-link" href="#">Tienda</a>
+                    </li>     
                 </ul>
             </div>
+            <CartIcon />
+            {isCartOpen && <CartDropdown />}  
         </nav>
             <Outlet />
         </Fragment>
