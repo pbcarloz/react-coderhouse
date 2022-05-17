@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './itemList-styles.css'
 
 
 const Categorias = () => {
 
+  const {category} = useParams();
   const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -13,6 +14,7 @@ const Categorias = () => {
       fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e/1')
       .then((response) => response.json())
       .then((users) => setCategories(users));
+      
     }, []);
   
     return (
@@ -23,7 +25,7 @@ const Categorias = () => {
                     <div className='background-image' style={{backgroundImage: `url(${imageUrl})`,}} />
                     <div className="category-body-container">
                         <h2>{title}</h2>
-                        <Link to={title} className='link-styling'>
+                        <Link to={`/tienda/${title}`} className='link-styling'>
                           Comprar
                         </Link>
                     </div>

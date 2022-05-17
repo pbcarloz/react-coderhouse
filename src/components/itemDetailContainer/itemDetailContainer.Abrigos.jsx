@@ -39,8 +39,6 @@ import './itemDetailContainer-styles.css'
 
     const ItemDetailAbrigos = () => {
 
-   
-
     return(
         <div className='products-container'>
             {abrigos.map(({imageUrl, name, price, id}) => (

@@ -41,9 +41,21 @@
     font-size: 18px;
 }
 .product-card-container .footer .name {
-    width: 90%;
+    font-weight: bold;
+    font-size: .9em;
+    width: 70%;
     margin-bottom: 15px;
 }
+
+.product-card-container .footer .stock {
+    font-size: .9em;
+    width: 35%;
+    margin-bottom: 15px;
+    color: brown;
+}
+
 .product-card-container .footer .price {
-    width: 30%;
+    font-weight: bold;
+    font-size: .9em;
+    width: 40%;
 }
