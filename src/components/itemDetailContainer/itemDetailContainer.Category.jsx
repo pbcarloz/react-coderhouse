@@ -47,19 +47,7 @@ import ProductCard from '../cart-dropdown/product-card/product-card.component';
 
             {articulos.map((product) => (
                 <ProductCard key={articulos.id} product={product}/>
-            ))}
-            {/* {articulos.map(({imageUrl, name, price,stock, id}) => (
-                <div className="product-card-container" key={id}>
-                    <img src={imageUrl} alt={`${name}`}/>
-                    <div className='footer'>
-                        <span className='name'>{name}</span>
-                        <span className='stock'>Stock: {stock}</span>
-                        <span className='price'>Precio $ {price}</span>
-                    </div>
-                        <ItemCounter stock = {5} initial = {1} className="contador" product={articulos}/>
-                </div>
-            ))} */}
-            
+            ))}          
         </div>
         
     )
