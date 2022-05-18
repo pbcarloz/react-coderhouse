@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from '../../context/cart.context'
 import { Link } from "react-router-dom";
 import './item-count.styles.css'
 
-const ItemCounter = ({stock, initial}) => {
+const ItemCounter = ({stock, initial, product}) => {
 
     const [counter, setCounter] = useState(initial);
 
+    const { addItemToCart } = useContext(CartContext)
+
+
+    const addProductToCart = () => addItemToCart(product);
 
     const addItem = () => {
         if (counter < stock) {
@@ -32,7 +37,7 @@ const ItemCounter = ({stock, initial}) => {
 
     return (
         <div className="counter-card-container">
-        <span onClick={onAdd} className='link-carrito'>Agregar al Carrito de Compra</span>
+        <span onClick={addProductToCart} className='link-carrito'>Agregar al Carrito de Compra</span>
             <div className="counter">
                 <button onClick={subtractItem}>-</button>
                 <span>{counter}</span>
