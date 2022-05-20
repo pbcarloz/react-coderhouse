@@ -2,8 +2,9 @@
 import SHOP_DATA from '../../shop-data.js'
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import './itemDetailContainer-styles.css'
 import ProductCard from '../cart-dropdown/product-card/product-card.component';
+import './itemDetailContainer-styles.css'
+
 
 
     const ItemDetailCategory = () => {
@@ -49,7 +50,6 @@ import ProductCard from '../cart-dropdown/product-card/product-card.component';
                 <ProductCard key={articulos.id} product={product}/>
             ))}          
         </div>
-        
     )
     }
 

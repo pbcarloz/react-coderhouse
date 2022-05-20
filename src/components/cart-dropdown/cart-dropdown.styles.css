@@ -21,6 +21,6 @@
     flex-direction: column;
     overflow: scroll;
 }
-.cart-dropdown-container button {
+.cart-dropdown-container .button-link button {
     margin-top: auto;
 }

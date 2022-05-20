@@ -9,7 +9,7 @@ import './cart-icon.style.css'
 
 const CartIcon = () => {
 
-    const{isCartOpen, setIsCartOpen } = useContext(CartContext);
+    const{isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
     
     // si se da click, se cambia isCartOpen a False
     const handleIsCartOpen = () => setIsCartOpen(!isCartOpen);
@@ -17,7 +17,7 @@ const CartIcon = () => {
     return (
         <div className='cart-icon-container' onClick={handleIsCartOpen}>
             <CartWidget className='shopping-icon' />
-            <span className='item-count'>0</span>
+            <span className='item-count'>{cartCount}</span>
         </div>
     )
 }
