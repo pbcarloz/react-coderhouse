@@ -18,7 +18,7 @@ const Navigation = () => {
             <Link to='/'>
                 <CrwnLogo className="main-logo"/>
             </Link>
-            <a className="navbar-brand" href="/">Rey Store</a>
+            <a className="navbar-brand">Rey Store</a>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">

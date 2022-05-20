@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import CheckOutItem from '../../components/checkout-item/checkout.-item.component';
 import { CartContext } from '../../context/cart.context';
 
@@ -6,6 +7,7 @@ import './checkout.styles.css'
 
 const CheckOut = () => {
     const {cartItems, cartTotal } = useContext(CartContext);
+
 
     return (
         <div className='checkout-container'>
@@ -26,9 +28,15 @@ const CheckOut = () => {
                     <span>Remover</span>
                 </div>
             </div>
-            {
-                cartItems.map((cartItem) => (
-                        <CheckOutItem cartItem={cartItem} />
+                {cartItems.length === 0 && 
+                    <Link to ='/'>
+                        <h1>No hay Articulos</h1>
+                    </Link>
+
+            }
+            { 
+              cartItems.map((cartItem) => 
+                (<CheckOutItem cartItem={cartItem} /> 
                 ))
             }
             <span className='total'>Total: $ {cartTotal}</span>
