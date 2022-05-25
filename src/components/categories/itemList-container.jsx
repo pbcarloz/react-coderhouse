@@ -1,20 +1,37 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './itemList-styles.css'
-
+import { db } from '../../services/firebase-utils.js'
+import {getDocs, collection } from 'firebase/firestore'
 
 const Categorias = () => {
 
-  const {category} = useParams();
-  const [categories, setCategories] = useState([]);
+const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-      // promesapara obtener las categorias del desafio *********************************************//
-      fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e/1')
-      .then((response) => response.json())
-      .then((users) => setCategories(users));
+
+  const getData = async () => {
       
+    const coleccion = collection(db,'productos');
+
+    try {
+        const data =  await getDocs(coleccion)
+        const result = data.docs.map(doc => doc = {id:doc.id, ...doc.data()})
+        setCategories(result)
+        console.log(categories.id);
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
+
+    useEffect( () => {
+      // promesapara obtener las categorias del desafio *********************************************//
+      // fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e/1')
+      // .then((response) => response.json())
+      // .then((users) => setCategories(users));
+      getData();
+
     }, []);
   
     return (

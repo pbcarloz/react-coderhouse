@@ -47,7 +47,7 @@ import './itemDetailContainer-styles.css'
         <div className='products-container'>
 
             {articulos.map((product) => (
-                <ProductCard key={articulos.id} product={product}/>
+                <ProductCard key={product.id} product={product}/>
             ))}          
         </div>
     )
