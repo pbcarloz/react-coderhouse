@@ -18,7 +18,7 @@ const CartDropdown = () => {
                 }
                 {cartItems.map(item => <CartItem key={item.id} cartItem={item} />)}
             </div>
-                <Button props='navigate' text='Terminar Compra'></Button>
+                <Button props='navigate' text='Ir al Carrito'></Button>
         </div>
     )
 };

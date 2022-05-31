@@ -89,6 +89,7 @@ const SHOP_DATA = [
         name: 'Converse Negros',
         imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
         price: 110,
+        stock: 3
       },
       {
         id: 13,

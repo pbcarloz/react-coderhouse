@@ -19,15 +19,23 @@
     width: 23%;
 }
 .checkout-item-container .quantity {
+    margin: 0 10px;
+    font-size: 20px;
     display: flex;
 }
+
+.checkout-item-container .price{
+    font-size: 20px;
+}
 .checkout-item-container .quantity .arrow {
+
     cursor: pointer;
 }
 .checkout-item-container .quantity .value {
     margin: 0 10px;
 }
 .checkout-item-container .remove-button {
+    font-size: 20px;
     padding-left: 12px;
     cursor: pointer;
 }

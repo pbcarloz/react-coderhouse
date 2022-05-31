@@ -3,7 +3,7 @@ import CheckOutItem from '../../components/checkout-item/checkout.-item.componen
 import SignUpForm from '../../components/formulario/formulario.component';
 
 import { Link } from 'react-router-dom';
-import { Fragment, useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../context/cart.context';
 
 import './checkout.styles.css'
@@ -13,7 +13,6 @@ const CheckOut = () => {
 
 
     return (
-        <Fragment>
         <div className='checkout-container'>
             <div className='checkout-header'>
                 <div className='header-block'>
@@ -32,24 +31,26 @@ const CheckOut = () => {
                     <span>Remover</span>
                 </div>
             </div>
+                {/* si no hay items no renderiza el componente */}
                 {cartItems.length === 0 && 
                     <Link to ='/' className='aviso'>
                         <h1>No Hay Articulos Agregados</h1>
                     </Link>
-            }
-            { 
-              cartItems.map((cartItem) => 
-                (<CheckOutItem cartItem={cartItem} key={cartItem.id}/> 
-                ))
-            }
-            <span className='total'>Total: $ {cartTotal}</span>
-            
+                }
+                { 
+                cartItems.map((cartItem) => 
+                    (<CheckOutItem cartItem={cartItem} key={cartItem.id}/> 
+                    ))
+                    
+                }
+                    <span className='total'>Total: $ {cartTotal}</span>
+                {/* si no hay items no renderiza el componente */}
+                {cartItems.length > 0 && 
+                        <SignUpForm />
+                }
+
         </div>
-            {cartItems.length > 0 && 
-                    <SignUpForm />
-            }
-            
-        </Fragment>
+    
     )
 }
 
