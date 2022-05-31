@@ -1,3 +1,4 @@
+
 .product-card-container {
     width: 100%;
     display: flex;
@@ -14,7 +15,6 @@
 }
 .product-card-container button {
     width: 80%;
-    opacity: 0.7;
     position: absolute;
     top: 255px;
     display: none;
@@ -33,10 +33,23 @@
     justify-content: space-between;
     font-size: 18px;
 }
+
 .product-card-container .footer .name {
-    width: 90%;
+    font-weight: bold;
+    font-size: .9em;
+    width: 70%;
     margin-bottom: 15px;
 }
+
+.product-card-container .footer .stock {
+    font-size: .9em;
+    width: 35%;
+    margin-bottom: 15px;
+    color: brown;
+}
+
 .product-card-container .footer .price {
-    width: 10%;
+    font-weight: bold;
+    font-size: .9em;
+    width: 40%;
 }

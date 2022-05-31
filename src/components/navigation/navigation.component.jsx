@@ -18,14 +18,15 @@ const Navigation = () => {
             <Link to='/'>
                 <CrwnLogo className="main-logo"/>
             </Link>
-            <a className="navbar-brand">Rey Store</a>
+            <a className="navbar-brand">Rey Clothing</a>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Tienda</a>
-                    </li>     
+                        <span className="nav-link" href="#">Moda Contemporanea Accesible</span>
+                    </li>  
                 </ul>
             </div>
+                <span >Carrito</span>
             <CartIcon />
             {isCartOpen && <CartDropdown />}  
         </nav>

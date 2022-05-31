@@ -19,8 +19,6 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 
-
-
 export const getCategoriesAndDocuments = async () => {
 
   const collectionRef = collection(db,'categorias');

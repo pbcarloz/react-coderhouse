@@ -45,7 +45,6 @@ import './itemDetailContainer-styles.css'
     // con el statate Articulo, mapea y genera los item details con los nombres, imagenes, stocks y precios.
     return(
         <div className='products-container'>
-
             {articulos.map((product) => (
                 <ProductCard key={product.id} product={product}/>
             ))}          

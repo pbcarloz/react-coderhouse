@@ -25,7 +25,7 @@ const removeCartItem =(cartItems, cartItemToRemove) => {
     const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToRemove.id);
     // verifica si la cantidad es 1, y la elimina el ultimo elemento en el array que coincide con el id
     if ( existingCartItem.quantity === 1) {
-        return cartItems.filter(cartItem => cartItem.id != cartItemToRemove.id)
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
     }
     //regresa el carrito con la cantidad actualizada
     return cartItems.map((cartItem) => 
@@ -38,7 +38,7 @@ const removeCartItem =(cartItems, cartItemToRemove) => {
 
 // funcion para eliminar item del carrito
 const clearCartItem = (cartItems, cartItemToClear) => {
-    return cartItems.filter(cartItem => cartItem.id != cartItemToClear.id)
+    return cartItems.filter(cartItem => cartItem.id !== cartItemToClear.id)
 }   
 
 export const CartContext = createContext({

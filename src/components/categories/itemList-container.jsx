@@ -18,7 +18,6 @@ const [categories, setCategories] = useState([]);
         const data =  await getDocs(coleccion)
         const result = data.docs.map(doc => doc = {id:doc.id, ...doc.data()})
         setCategories(result)
-        console.log(categories.id);
     } catch (err) {
       console.log(err);
     }
@@ -26,10 +25,7 @@ const [categories, setCategories] = useState([]);
   }
 
     useEffect( () => {
-      // promesapara obtener las categorias del desafio *********************************************//
-      // fetch('https://api.jsonbin.io/b/627721b725069545a32efa5e/1')
-      // .then((response) => response.json())
-      // .then((users) => setCategories(users));
+     
       getData();
 
     }, []);

@@ -21,6 +21,7 @@
     flex-direction: column;
     overflow: scroll;
 }
-.cart-dropdown-container .button-link button {
-    margin-top: auto;
+.cart-dropdown-container button {
+    margin-top: 10px;
+    font-size: 15px;
 }
