@@ -1,5 +1,7 @@
 Este repositorio y proyecto fue creado para trabajar el projecto del curso Corder House.
 
+Live en https://coder-house-rey-clothing.netlify.app
+
 Es un proyecto E-commerce para demostrar las aplicaciones que pueden desarrollarse utilizando React con componentes funcionales.
 Se hizo el uso de varios hooks como useState, useContext, useNavigation, react router, etc.
 Todo integrado en una sola aplicacion que tambien fue conectada con Google firebase para realizar solicitudes de colecciones de datos,
