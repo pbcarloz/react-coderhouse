@@ -39,3 +39,18 @@
     padding-left: 12px;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 800px) {
+    .checkout-item-container .quantity, .name, .price {
+        font-size: 15px;
+    }
+
+    .checkout-item-container .price {
+        font-size: 15px;
+    }
+
+    .checkout-item-container .remove-button {
+        font-size: 15px;
+    }
+  }

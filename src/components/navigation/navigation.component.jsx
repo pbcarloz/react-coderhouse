@@ -18,11 +18,11 @@ const Navigation = () => {
             <Link to='/'>
                 <CrwnLogo className="main-logo"/>
             </Link>
-            <a className="navbar-brand">Rey Clothing</a>
+            <span className="navbar-brand">Rey Clothing</span>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <span className="nav-link" href="#">Moda Contemporanea Accesible</span>
+                        <span className="nav-link" href="#">Bienvenido a la tienda con la mejor moda contemporanea mas accesible !</span>
                     </li>  
                 </ul>
             </div>

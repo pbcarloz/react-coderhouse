@@ -1,34 +1,32 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './itemList-styles.css'
 import { db } from '../../services/firebase-utils.js'
 import {getDocs, collection } from 'firebase/firestore'
+import './itemList-styles.css'
 
 const Categorias = () => {
 
-const [categories, setCategories] = useState([]);
-
+  const [categories, setCategories] = useState([]);
 
   const getData = async () => {
-      
+    // Coleccion de categorias de firebase
     const coleccion = collection(db,'productos');
 
-    try {
-        const data =  await getDocs(coleccion)
-        const result = data.docs.map(doc => doc = {id:doc.id, ...doc.data()})
-        setCategories(result)
-    } catch (err) {
-      console.log(err);
-    }
+      try {
+          const data =  await getDocs(coleccion)
+          const result = data.docs.map(doc => doc = {id:doc.id, ...doc.data()})
+          setCategories(result)
+      } catch (err) {
+        console.log(err);
+      }
+  };
 
-  }
+  useEffect( () => {
+    
+    getData();
 
-    useEffect( () => {
-     
-      getData();
-
-    }, []);
+  }, []);
   
     return (
         <div className="categories-container">
@@ -42,11 +40,10 @@ const [categories, setCategories] = useState([]);
                           Comprar
                         </Link>
                     </div>
-                    {console.log(title)}
                  </div>
             ))}
         </div>
     );
-  }
+};
   
   export default Categorias;

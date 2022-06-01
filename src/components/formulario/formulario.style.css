@@ -52,3 +52,10 @@
     justify-content: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+@media screen and (max-width: 800px) {
+    .form-container span {
+        font-size: 26px;
+    }
+
+  }
