@@ -42,6 +42,7 @@ import './itemDetailContainer-styles.css'
         default:
           console.log('Error con el array');
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // con el statate Articulo, mapea y genera los item details con los nombres, imagenes, stocks y precios.
