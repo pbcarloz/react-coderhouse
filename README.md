@@ -5,6 +5,8 @@ Se hizo el uso de varios hooks como useState, useContext, useNavigation, react r
 Todo integrado en una sola aplicacion que tambien fue conectada con Google firebase para realizar solicitudes de colecciones de datos,
 almacenamiento de ordenes, usuarios, etc.
 
+![alt text](https://github.com/pbcarloz/react-coderhouse/blob/main/public/Mainpage.PNG?raw=true)
+
 Para ejecutar la aplicaciones necesario inicializar npm start
 Ejecuta la aplicación en el modo de desarrollo.
 Abre http://localhost:3000 para verla en tu navegador.
