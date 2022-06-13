@@ -36,12 +36,13 @@ const SignUpForm = () => {
 
     const orderHandler = async (e) => {
         e.preventDefault();
-        await addDoc(ordersCollection, formFields).then(({id}) => console.log(id))
+        let ticket = '';
+        await addDoc(ordersCollection, formFields).then(({id}) => ticket = id)
 
         Swal.fire({
             icon: 'success',
             title: 'Compra Terminada!',
-            text: 'Tu orden fue registrada',
+            text: `El Codigo de tu orden es el: ${ticket} `,
             showConfirmButton: false,
             footer: '<a href="/">Finalizar</a>'
           }).then( 

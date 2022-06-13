@@ -1,15 +1,12 @@
-
-import './product-card.style.css'
-import { Link } from 'react-router-dom';
 import Button from '../../itemCount/item-count.component'
+import './product-card-detail.style.css'
 
-
-const ProductCard = ({product}) => {
+const ProductCardDetail = ({product}) => {
     
     const {name, price, imageUrl, stock, id} = product;
     
     return (
-    <div className="product-card-containers">
+    <div className="product-detail-container">
         <img src={imageUrl} alt={`${name}`}/>
         <div className='footer'>
             <span className='name'>{name}</span>
@@ -17,12 +14,7 @@ const ProductCard = ({product}) => {
             <span className='price'>{`$ ${price}`}</span>
         </div>
             <Button className='boton' stock = {stock} initial = {1} product={product} text='Agregar al Carrito' props='addToCart'/>
-            <div className='link'>
-                <Link to={`/tienda/producto/${id}`} className='link-styling'>
-                            Ver Detalles
-                </Link>
-            </div>
     </div>)
 }
 
-export default ProductCard;
+export default ProductCardDetail;
