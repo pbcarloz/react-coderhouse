@@ -3,7 +3,7 @@ import './product-card-detail.style.css'
 
 const ProductCardDetail = ({product}) => {
     
-    const {name, price, imageUrl, stock, id} = product;
+    const {name, price, imageUrl, stock} = product;
     
     return (
     <div className="product-detail-container">
