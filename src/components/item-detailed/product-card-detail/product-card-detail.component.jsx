@@ -1,4 +1,4 @@
-import Button from '../../itemCount/item-count.component'
+import QuantityButton from '../../item-quantity/item-quantity.component';
 import './product-card-detail.style.css'
 
 const ProductCardDetail = ({product}) => {
@@ -12,9 +12,11 @@ const ProductCardDetail = ({product}) => {
             <span className='name'>{name}</span>
             <span className='name'>{`Stock: ${stock}`}</span>
             <span className='price'>{`$ ${price}`}</span>
+            
         </div>
-            <Button className='boton' stock = {stock} initial = {1} product={product} text='Agregar al Carrito' props='addToCart'/>
-    </div>)
+            <QuantityButton producto={product} stock={stock} />
+    </div>
+    )
 }
 
 export default ProductCardDetail;

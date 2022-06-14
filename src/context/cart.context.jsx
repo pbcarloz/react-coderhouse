@@ -18,6 +18,23 @@ const addCartItem = (cartItems, productToAdd) => {
     // devuelve un array con los cartItems, un nuevo array
     return [...cartItems, {...productToAdd, quantity: 1 }];
 }
+// funcion para agregar cantidad en especifico en el itemDetail....
+const addCartQuantity = (cartItems, productToAdd, quantityToAdd ) => {
+    // busca si cartItems tiene productos con el mismo Id
+    const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id);
+
+        // si encuentra un id ya existente, incrementa la cantidad determinada
+    if (existingCartItem) {
+        return cartItems.map((cartItem) => 
+            cartItem.id === productToAdd.id ? {
+            ...cartItem, quantity: cartItem.quantity + quantityToAdd }
+            : cartItem
+            );
+    }
+    
+    // devuelve un array con los cartItems, un nuevo array
+    return [...cartItems, {...productToAdd, quantity: quantityToAdd }];
+}
 
 // FUNCION PARA ELIMINAR ITEMS DEL CARRITO O REDUCIR CANTIDAD
 const removeCartItem =(cartItems, cartItemToRemove) => {
@@ -64,8 +81,7 @@ export const CartProvider = ({children}) => {
     const  [cartCount, setCartCount] = useState(0);
     // state para total del carrito
     const  [cartTotal, setCartTotal] = useState(0);
-
-
+    // state para renderizar el producto en especifico
     const  [cartDetail, setCartDetail] = useState([]);
 
 
@@ -85,6 +101,13 @@ export const CartProvider = ({children}) => {
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd));
     }
+
+    // funcion para agregar cantidad especifica al carrito contexto*************************************************************
+    const addQuantityToCart = (productToAdd, quantityToAdd) => {
+        setCartItems(addCartQuantity(cartItems, productToAdd, quantityToAdd));
+    }
+
+
     // funcion para quitar items al carrito contexto
     const removeItemToCart = (cartItemToRemove) => {
         setCartItems(removeCartItem(cartItems, cartItemToRemove));
@@ -106,7 +129,8 @@ export const CartProvider = ({children}) => {
         cartTotal, 
         setCartItems,
         cartDetail,
-        setCartDetail
+        setCartDetail,
+        addQuantityToCart
      };
 
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>

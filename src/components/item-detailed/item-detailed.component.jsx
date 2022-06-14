@@ -1,5 +1,4 @@
 
-import './item-detailed.styles.css'
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart.context';
@@ -17,7 +16,7 @@ const ItemDetailed = () => {
     console.log(itemDetail[0]);
 
     return (
-        <ProductCardDetail product={itemDetail[0]} />
+            <ProductCardDetail product={itemDetail[0]} />  
     )
 }
 

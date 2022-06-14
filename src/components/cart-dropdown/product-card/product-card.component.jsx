@@ -16,7 +16,6 @@ const ProductCard = ({product}) => {
             <span className='name'>{`Stock: ${stock}`}</span>
             <span className='price'>{`$ ${price}`}</span>
         </div>
-            <Button className='boton' stock = {stock} initial = {1} product={product} text='Agregar al Carrito' props='addToCart'/>
             <div className='link'>
                 <Link to={`/tienda/producto/${id}`} className='link-styling'>
                             Ver Detalles
