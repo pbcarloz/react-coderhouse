@@ -1,53 +1,73 @@
 
 .product-detail-container {
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: 550px;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 .product-detail-container img {
     width: auto;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
     margin: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.product-detail-container button {
-    width: 50%;
+
+.product-detail-container img:hover {
+    transition: 1s;
+    transform: scale(1.1) ;
 }
-.product-detail-container:hover img {
-    opacity: 0.8;
-}
-.product-detail-container:hover button {
-    opacity: 0.85;
-    display: flex;
-}
+
 .product-detail-container .footer {
-    width: 100%;
     height: 5%;
     display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: center;
 }
 
 .product-detail-container .footer .name {
-    font-weight: bold;
-    font-size: .9em;
-    width: 70%;
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 1px 10px 50px 0px;
+}
+
+
+.product-detail-container .footer .text {
     margin-bottom: 15px;
+    text-align: center;
+    
 }
 
 .product-detail-container .footer .stock {
-    font-size: .9em;
-    width: 35%;
     margin-bottom: 15px;
     color: brown;
+    text-align: center;
 }
 
 .product-detail-container .footer .price {
     font-weight: bold;
-    font-size: .9em;
-    width: 40%;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.product-detail-container .footer .navigate-button {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: brown;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
