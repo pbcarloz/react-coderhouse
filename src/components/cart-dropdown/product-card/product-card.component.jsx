@@ -1,8 +1,6 @@
 
 import './product-card.style.css'
 import { Link } from 'react-router-dom';
-import Button from '../../itemCount/item-count.component'
-
 
 const ProductCard = ({product}) => {
     
