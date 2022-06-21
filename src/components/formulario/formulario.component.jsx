@@ -34,11 +34,36 @@ const SignUpForm = () => {
         setFormFields({...formFields, [name]: value})
     }
 
+    const validarInput = (e) => {
+        e.preventDefault();
+
+        const regName =  /^[a-zA-Z  ]+$/ ;
+
+        if (displayName === '' || 
+        !displayName.match(regName) || 
+        email === '' ||
+        !String(email).toLowerCase().match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            ) ||
+        telefono === '' ||
+        telefono.length < 8
+         ) {
+            Swal.fire({
+                icon: 'error',
+                title: `Tu informacion esta incorrecta !`,
+                text: `Ingresa correctamente tus datos`,
+                footer: ''
+              })  
+        } else {
+            orderHandler(e)
+        }
+    }
+
     const orderHandler = async (e) => {
+        
         e.preventDefault();
         let ticket = '';
         await addDoc(ordersCollection, formFields).then(({id}) => ticket = id)
-
         Swal.fire({
             icon: 'success',
             title: 'Compra Terminada!',
@@ -64,7 +89,7 @@ const SignUpForm = () => {
                 <label className='form-input-label' >Telefono</label>
                 <input required type="number" onChange={handleChange} name="telefono" value={telefono} className='form-input'/>
 
-                <button onClick={orderHandler}>Terminar Compra</button>
+                <button onClick={validarInput} >Terminar Compra</button>
             </form>
         </div>
     )

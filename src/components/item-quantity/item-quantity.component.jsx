@@ -5,7 +5,7 @@ import './item-quantity.styles.css'
 
 const QuantityButton = ({ producto, stock }) => {
 
-    const [counters, setCounters] = useState(0);
+    const [counters, setCounters] = useState(1);
     const [visual, setVisual] = useState(true);
 
     const { addQuantityToCart } = useContext(CartContext)
@@ -31,7 +31,7 @@ const QuantityButton = ({ producto, stock }) => {
     };
 
     const reduceQuantityHandler = () => {
-        if ( counters > 0 ) {
+        if ( counters > 1 ) {
             setCounters(counters - 1 );
             console.log(`Se quitaron!!!! ${counters} piezas al carrito`);
         }

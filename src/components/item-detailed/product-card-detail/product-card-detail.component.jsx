@@ -18,7 +18,6 @@ const ProductCardDetail = ({product}) => {
             <QuantityButton producto={product} stock={stock} />
             <button onClick={() => navigate(-1)} className='navigate-button'>Volver</button>
         </div>
-            
     </div>
     )
 }
